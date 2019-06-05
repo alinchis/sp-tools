@@ -1,29 +1,26 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <section id="app-container">
     <router-view/>
-  </div>
+  </section>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<script>
+export default {
+  name: 'app',
+  mounted() {
+    this.$store.dispatch('ACT_LOAD_UATS');
+  },
+};
+</script>
+
+<style lang="sass">
+html
+  height: 100%
+
+body
+  height: 100%
+
+#app-container
+  height: 100%
+
 </style>
